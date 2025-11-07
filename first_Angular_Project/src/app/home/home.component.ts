@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, signal } from '@angular/core';
 
 @Component({
   selector: 'app-home',
@@ -8,5 +8,6 @@ import { Component } from '@angular/core';
   styleUrl: './home.component.scss'
 })
 export class HomeComponent {
-
+  homebutton = signal('Get Started you idiot');
+  @Input() welcometext !: string;
 }
