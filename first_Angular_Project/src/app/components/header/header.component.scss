@@ -1,0 +1,38 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #1976d2; // Angular Material blue
+  color: #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  .logo {
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+
+  .nav {
+    display: flex;
+    gap: 1.5rem;
+
+    .nav-link {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s ease;
+
+      &:hover {
+        color: #cfe2ff;
+      }
+
+      &.active {
+        border-bottom: 2px solid #fff;
+      }
+    }
+  }
+}
