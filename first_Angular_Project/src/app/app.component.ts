@@ -13,4 +13,5 @@ import { HomeComponent } from './home/home.component';
 export class AppComponent {
   title = signal('Angular App');
   homeMessage = signal('Welcome Home, Talal...');
+  greeteveryone = signal('hello mena san');
 }
