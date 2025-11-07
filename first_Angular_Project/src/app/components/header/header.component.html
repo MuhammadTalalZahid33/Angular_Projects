@@ -8,14 +8,37 @@
 </head>
 
 <body>
-    <header class="header">
-        <div class="logo">{{logotext}}</div>
-        <nav class="nav">
-            <a href="#" class="nav-link active">Home</a>
-            <a href="#" class="nav-link">About</a>
-            <a href="#" class="nav-link">Contact</a>
-        </nav>
-    </header>
+   <header class="header">
+  <div class="logo">{{ logotext }}</div>
+
+  <nav class="nav">
+    <a
+      routerLink="/"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      class="nav-link"
+    >
+      Home
+    </a>
+
+    <a
+      routerLink="/about"
+      routerLinkActive="active"
+      class="nav-link"
+    >
+      About
+    </a>
+
+    <a
+      routerLink="/todos"
+      routerLinkActive="active"
+      class="nav-link"
+    >
+      Todos
+    </a>
+  </nav>
+</header>
+
 
 </body>
 

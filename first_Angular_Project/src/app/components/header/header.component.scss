@@ -4,43 +4,91 @@
   box-sizing: border-box;
   outline: none;
 }
-
+:host {
+  display: block;
+  width: 100%;
+  font-family: 'Segoe UI', Roboto, sans-serif;
+  background-color: #1976d2;
+  color: #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
 
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
-  background-color: #1976d2; // Angular Material blue
-  color: #fff;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+  padding: 0.8rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
 
-  .logo {
-    font-size: 1.5rem;
-    font-weight: 600;
-    letter-spacing: 0.5px;
+.logo {
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+
+  &:hover {
+    transform: scale(1.03);
+  }
+}
+
+.nav {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  .nav-link {
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+    font-weight: 500;
+    position: relative;
+    padding: 0.4rem 0;
+    text-transform: capitalize;
+    transition: color 0.25s ease;
+
+    &:hover {
+      color: #bbdefb; /* hover color */
+    }
+
+    /* Only the .active link gets the underline pseudo-element */
+    &.active::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background-color: #fff;
+      border-radius: 2px;
+    }
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   .nav {
-    display: flex;
-    gap: 1.5rem;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 0.5rem;
 
     .nav-link {
-      color: #fff;
-      text-decoration: none;
-      font-weight: 500;
-      transition: color 0.2s ease;
-
-      &:hover {
-        color: #cfe2ff;
-      }
-
-      &.active {
-        border-bottom: 2px solid #fff;
-      }
+      padding: 0.5rem 0;
+      width: 100%;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
     }
   }
 }

@@ -6,7 +6,7 @@ import { AppComponent } from "../app.component";
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [ChildComponent, CounterComponent, AppComponent],
+  imports: [ChildComponent, CounterComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
