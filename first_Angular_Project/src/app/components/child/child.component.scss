@@ -1,0 +1,36 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 50vh;
+  background-color: #f9fafc;
+  font-family: 'Segoe UI', Roboto, sans-serif;
+  color: #333;
+}
+
+p {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+input {
+  width: 280px;
+  padding: 0.6rem 1rem;
+  font-size: 1rem;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+
+  &:focus {
+    border-color: #1976d2;
+    box-shadow: 0 0 0 4px rgba(25, 118, 210, 0.15);
+  }
+
+  &::placeholder {
+    color: #aaa;
+    font-style: italic;
+  }
+}
