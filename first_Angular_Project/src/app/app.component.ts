@@ -14,4 +14,10 @@ export class AppComponent {
   title = signal('Angular App');
   homeMessage = signal('Welcome Home, Talal...');
   greeteveryone = signal('hello mena san');
+
+  childMessage: string = "";
+  receiveMessage(message:string){
+    console.log("fdsfa", this.childMessage);
+    this.childMessage = message;
+  }
 }

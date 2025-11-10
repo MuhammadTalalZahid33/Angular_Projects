@@ -3,11 +3,12 @@ import { TodosService } from '../services/todos.service';
 import { Todo } from '../model/todo.type';
 import { catchError } from 'rxjs';
 import { NgIf } from '@angular/common';
+import { HighlightCompletedTodoDirective } from '../directives/highlight-completed-todo.directive';
 
 @Component({
   selector: 'app-todos',
   standalone: true,
-  imports: [NgIf],
+  imports: [NgIf, HighlightCompletedTodoDirective],
   templateUrl: './todos.component.html',
   styleUrl: './todos.component.scss',
   // providers: [TodosService]  // if only need here
@@ -37,11 +38,11 @@ export class TodosComponent implements OnInit {
       })
   }
 
-  // toggleTodo(id: number) {
-  //   this.todoItems.update((todos) =>
-  //     todos.map((t) =>
-  //       t.id === id ? { ...t, completed: !t.completed } : t
-  //     )
-  //   );
-  // }
+  toggleTodo(id: number) {
+    this.todoItems.update((todos) =>
+      todos.map((t) =>
+        t.id === id ? { ...t, completed: !t.completed } : t
+      )
+    );
+  }
 }
