@@ -15,37 +15,37 @@
 
 <body>
     <section class="todos">
-  <h1>Todo List</h1>
+        <h1>Todo List</h1>
 
-   <!-- this is not used anymore... -->
+        <!-- this is not used anymore... -->
         <!-- <div *ngIf="!todoItems().length" class="loader"></div> -->
 
         <!-- now we have control blocks as shown in the code instead of above *ngif -->
 
-  @if (todoItems().length === 0) {
-    <div class="loader"></div>
-    <p class="empty">Loading todos... or no todos found!</p>
-  } @else {
-    <div class="todo-grid">
-      @for (todo of todoItems(); track todo.id) {
-        <label
-          class="todo-card"
-          [appHighlightCompletedTodo]="todo.completed"
-        >
-          <input
-            type="checkbox"
-            [checked]="todo.completed"
-            (change)="toggleTodo(todo.id)"
-          />
-          <div class="todo-content">
-            <div class="todo-id">#{{ todo.id }}</div>
-            <h3>{{ todo.title }}</h3>
-          </div>
-        </label>
-      }
-    </div>
-  }
-</section>
+        <form>
+        <label>Filter Todos: </label>
+        <input name="searchTerm" [(ngModel)] = "searchTerm" placeholder="Search Todos...">
+        </form>
+        <br>
+        <br>
+
+        @if (todoItems().length === 0) {
+        <div class="loader"></div>
+        <p class="empty">Loading todos... or no todos found!</p>
+        } @else {
+        <div class="todo-grid">
+            @for (todo of todoItems() | filterTodos: searchTerm(); track todo.id) {
+            <label class="todo-card" [appHighlightCompletedTodo]="todo.completed">
+                <input type="checkbox" [checked]="todo.completed" (change)="toggleTodo(todo.id)" />
+                <div class="todo-content">
+                    <div class="todo-id">#{{ todo.id }}</div>
+                    <h3>{{ todo.title }}</h3>
+                </div>
+            </label>
+            }
+        </div>
+        }
+    </section>
 
 </body>
 

@@ -2,13 +2,15 @@ import { Component, Inject, inject, OnInit, signal } from '@angular/core';
 import { TodosService } from '../services/todos.service';
 import { Todo } from '../model/todo.type';
 import { catchError } from 'rxjs';
-import { NgIf } from '@angular/common';
+import { NgIf, UpperCasePipe } from '@angular/common';
 import { HighlightCompletedTodoDirective } from '../directives/highlight-completed-todo.directive';
+import { FormsModule } from '@angular/forms';
+import { FilterTodosPipe } from '../pipes/filter-todos.pipe';
 
 @Component({
   selector: 'app-todos',
   standalone: true,
-  imports: [NgIf, HighlightCompletedTodoDirective],
+  imports: [NgIf, HighlightCompletedTodoDirective, FormsModule, FilterTodosPipe],
   templateUrl: './todos.component.html',
   styleUrl: './todos.component.scss',
   // providers: [TodosService]  // if only need here
@@ -26,6 +28,8 @@ export class TodosComponent implements OnInit {
   // ******* For Api **********
   todoService = inject(TodosService);
   todoItems = signal<Array<Todo>>([]);
+  searchTerm = signal('');
+
   ngOnInit(): void {
     this.todoService.getTodosFromApi()
       .pipe(catchError((err) => {
