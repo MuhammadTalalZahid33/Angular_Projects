@@ -4,14 +4,22 @@ export const routes: Routes = [
     {
         path: '',
         pathMatch: 'full',
-        loadComponent: () =>{
+        loadComponent: () => {
             return import('./home/home.component').then(m => m.HomeComponent);
         }
     },
     {
         path: 'todos',
-        loadComponent: () =>{
+        loadComponent: () => {
             return import('./todos/todos.component').then(m => m.TodosComponent);
         }
+    },
+    {
+        path: 'about',
+        loadComponent: () => {
+            return import('./about/about.component').then(m => m.AboutComponent);
+
+        }
     }
+
 ];
