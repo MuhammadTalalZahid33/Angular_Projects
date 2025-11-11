@@ -1,9 +1,10 @@
+import { NgFor, NgIf } from '@angular/common';
 import { Component, signal } from '@angular/core';
 
 @Component({
   selector: 'app-about',
   standalone: true,
-  imports: [],
+  imports: [NgFor],
   templateUrl: './about.component.html',
   styleUrl: './about.component.scss'
 })
