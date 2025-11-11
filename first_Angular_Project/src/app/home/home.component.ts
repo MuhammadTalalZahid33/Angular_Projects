@@ -2,11 +2,12 @@ import { Component, EventEmitter, input, Input, Output, signal } from '@angular/
 import { ChildComponent } from "../components/child/child.component";
 import { CounterComponent } from '../components/counter/counter.component';
 import { AppComponent } from "../app.component";
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [ChildComponent, CounterComponent],
+  imports: [ChildComponent, CounterComponent, FormsModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
@@ -19,4 +20,7 @@ export class HomeComponent {
   sendMessage(){
     this.messageEvent.emit("Hello Parent, I am child")
   }  
+
+  //ngModel
+  title:string = "ngModel: two way data binding....";
 }

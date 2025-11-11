@@ -15,6 +15,12 @@
     </p>
     <p>{{greetings()}}</p>
     <button class="cta">{{homebutton()}}</button>
+
+    <br>
+    <!-- <input type="text" [value]="title"  #input (keyup.enter)="title = input.value" /> -->
+     <input type="text" [(ngModel)] = "title">
+    <h2>{{ title }}</h2>
+
   </div>
 </section>
     <app-child/>
