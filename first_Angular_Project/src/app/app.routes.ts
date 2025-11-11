@@ -27,6 +27,13 @@ export const routes: Routes = [
             return import('./components/template-driven-form/template-driven-form.component')
             .then(m => m.TemplateDrivenFormComponent);
         }
+    },
+    {
+        path: 'rf',
+        loadComponent: () => {
+            return import('./components/reactive-form/reactive-form.component')
+            .then(m => m.ReactiveFormComponent);
+        }
     }
 
 ];

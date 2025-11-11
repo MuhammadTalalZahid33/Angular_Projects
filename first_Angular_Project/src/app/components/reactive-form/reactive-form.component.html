@@ -1,0 +1,45 @@
+<h2>User Registration Form (Reactive)</h2>
+
+<form [formGroup]="userForm" (ngSubmit)="onSubmit()" class="user-form">
+  
+  <!-- NAME FIELD -->
+  <label for="name">Name</label>
+  <input id="name" type="text" formControlName="name" />
+  <div class="error" *ngIf="f['name'].invalid && f['name'].touched">
+    <small *ngIf="f['name'].errors?.['required']">Name is required.</small>
+    <small *ngIf="f['name'].errors?.['minlength']">Minimum 3 characters required.</small>
+  </div>
+
+  <!-- EMAIL FIELD -->
+  <label for="email">Email</label>
+  <input id="email" type="email" formControlName="email" />
+  <div class="error" *ngIf="f['email'].invalid && f['email'].touched">
+    <small *ngIf="f['email'].errors?.['required']">Email is required.</small>
+    <small *ngIf="f['email'].errors?.['email']">Please enter a valid email.</small>
+  </div>
+
+  <!-- PASSWORD FIELD -->
+  <label for="password">Password</label>
+  <input id="password" type="password" formControlName="password" />
+  <div class="error" *ngIf="f['password'].invalid && f['password'].touched">
+    <small *ngIf="f['password'].errors?.['required']">Password is required.</small>
+    <small *ngIf="f['password'].errors?.['minlength']">Minimum 6 characters required.</small>
+  </div>
+
+  <!-- GENDER FIELD -->
+  <label for="gender">Gender</label>
+  <select id="gender" formControlName="gender">
+    <option value="">Select Gender</option>
+    <option value="male">Male</option>
+    <option value="female">Female</option>
+  </select>
+  <div class="error" *ngIf="f['gender'].invalid && f['gender'].touched">
+    <small>Please select your gender.</small>
+  </div>
+
+  <!-- SUBMIT -->
+  <button type="submit" [disabled]="userForm.invalid">Register</button>
+</form>
+
+<!-- DEBUG -->
+<pre>{{ userForm.value | json }}</pre>
