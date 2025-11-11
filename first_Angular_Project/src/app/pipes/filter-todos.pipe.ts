@@ -16,5 +16,4 @@ export class FilterTodosPipe implements PipeTransform {
       return todo.title.toLowerCase().includes(text);
     })
   }
-
 }

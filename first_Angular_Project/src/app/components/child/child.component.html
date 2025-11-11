@@ -1,6 +1,11 @@
 <p>Homechild works!</p>
-<input 
-    placeholder="Open console and type something to see magic" 
-    type="input" 
-    (keyup)="onClickLogMessage($event)"
->
+<input placeholder="Open console and type something to see magic" type="input" (keyup)="onClickLogMessage($event)">
+
+<br>
+<br>
+<form action="" method="get">
+    <input type="text" [formControl]="name">
+    <p>{{name.value}}</p>
+    <button type="button" (click)="Print()">login</button>
+    <button type="button" (click)="SetValues()">Set</button>
+</form>
