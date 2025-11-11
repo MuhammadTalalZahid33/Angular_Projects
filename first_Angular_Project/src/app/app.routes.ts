@@ -20,6 +20,13 @@ export const routes: Routes = [
             return import('./about/about.component').then(m => m.AboutComponent);
 
         }
+    },
+    {
+        path: 'tdf',
+        loadComponent: () => {
+            return import('./components/template-driven-form/template-driven-form.component')
+            .then(m => m.TemplateDrivenFormComponent);
+        }
     }
 
 ];
