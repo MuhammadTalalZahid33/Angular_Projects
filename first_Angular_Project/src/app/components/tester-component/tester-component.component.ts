@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-tester-component',
@@ -15,5 +15,14 @@ export class TesterComponentComponent {
   transformText() {
     this.announcement = this.announcement.toUpperCase();
   }
-  
+
+  // Custom Event
+  @Input() greeting!: string ;
+
+  // Define a custom event
+  @Output() notify = new EventEmitter<string>();
+
+  sendMessageToParent() {
+    this.notify.emit('Hello Parent! Message from Child 👋');
+  }
 }

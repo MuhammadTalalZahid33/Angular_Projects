@@ -25,5 +25,14 @@
   </div>
 </section>
 
+<h2>Parent Component</h2>
+<!-- Send data to child -->
+<app-tester-component 
+  [greeting]="parentMessage"
+  (notify)="handleChildEvent($event)">
+</app-tester-component>
+
+<p>Message from child: {{childMessage()}}</p>
+
 </body>
 </html>

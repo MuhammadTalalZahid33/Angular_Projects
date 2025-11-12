@@ -1,9 +1,16 @@
-<p>tester-component works!</p>
+<!-- <p>tester-component works!</p>
 
-<button type="submit" [disabled]="IsFormInValid">Submit</button>
+<button type="submit" [disabled]="IsFormInValid">Submit</button> -->
 <!-- dynamic html attribute -->
-<p [attr.data-test-id]="testId">Hello</p>
+<!-- <p [attr.data-test-id]="testId">Hello</p> -->
 
-<!--  -->
-<p>{{ announcement }}</p>
-<button (click)="transformText()">Abracadabra!</button>
+<!-- Event -->
+<!-- <p>{{ announcement }}</p>
+<button (click)="transformText()">Abracadabra!</button> -->
+
+<!-- Custom -->
+
+<h3>Child Component</h3>
+<p>Received from Parent: {{ greeting }}</p>
+
+<button (click)="sendMessageToParent()">Send Message to Parent</button>
