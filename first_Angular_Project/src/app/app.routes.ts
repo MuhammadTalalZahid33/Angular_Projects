@@ -1,3 +1,4 @@
+import { TestComponentRenderer } from '@angular/core/testing';
 import { Routes } from '@angular/router';
 
 export const routes: Routes = [
@@ -34,6 +35,14 @@ export const routes: Routes = [
             return import('./components/reactive-form/reactive-form.component')
             .then(m => m.ReactiveFormComponent);
         }
+    },
+    {
+        path: 'test',
+        loadComponent: () => {
+            return import('./components/tester-component/tester-component.component')
+            .then(m => m.TesterComponentComponent);
+        }
     }
 
-];
+
+]
