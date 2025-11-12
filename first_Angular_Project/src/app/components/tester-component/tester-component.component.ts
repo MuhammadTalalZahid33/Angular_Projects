@@ -15,9 +15,5 @@ export class TesterComponentComponent {
   transformText() {
     this.announcement = this.announcement.toUpperCase();
   }
-
-  @Input({ transform: trimString }) label = '';
-}
-function trimString(value: string | undefined) {
-  return value?.trim() ?? '';
+  
 }
