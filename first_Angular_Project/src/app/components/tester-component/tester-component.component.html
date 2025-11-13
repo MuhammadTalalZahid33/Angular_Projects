@@ -8,9 +8,12 @@
 <p>{{ announcement }}</p>
 <button (click)="transformText()">Abracadabra!</button>
 
-<!-- Custom -->
 
+<div *ngIf="isEmbedded">
+<!-- Custom Event -->
 <h3>Child Component</h3>
 <p>Received from Parent: {{ greeting }}</p>
 
 <button (click)="sendMessageToParent()">Send Message to Parent</button>
+</div>
+

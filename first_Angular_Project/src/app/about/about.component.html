@@ -29,7 +29,8 @@
 <!-- Send data to child -->
 <app-tester-component 
   [greeting]="parentMessage"
-  (notify)="handleChildEvent($event)">
+  (notify)="handleChildEvent($event)"
+  [isEmbedded]="true">
 </app-tester-component>
 
 <p>Message from child: {{childMessage()}}</p>
