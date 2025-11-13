@@ -2,47 +2,33 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
 </head>
 
 <body>
-   <header class="header">
-  <div class="logo">{{ logotext }}</div>
+  <header class="header">
+    <div class="logo">{{ logotext }}</div>
 
-  <nav class="nav">
-    <a
-      routerLink="/"
-      routerLinkActive="active"
-      [routerLinkActiveOptions]="{ exact: true }"
-      class="nav-link"
-    >
-      Home
-    </a>
+    <nav class="nav">
+      <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" class="nav-link">
+        Home
+      </a>
 
-    <a
-      routerLink="/about"
-      routerLinkActive="active"
-      class="nav-link"
-    >
-      About
-    </a>
+      <a routerLink="/about" routerLinkActive="active" class="nav-link">
+        About
+      </a>
 
-    <a
-      routerLink="/todos"
-      routerLinkActive="active"
-      class="nav-link"
-    >
-      Todos
-    </a>
-    <a 
-      routerLink="/anime"
-      routerLinkActive="active"
-      class="nav-link"
-    > Anime</a>
-  </nav>
-</header>
+      <a routerLink="/todos" routerLinkActive="active" class="nav-link">
+        Todos
+      </a>
+      <a routerLink="/anime" routerLinkActive="active" class="nav-link"> Anime
+      </a>
+      <a routerLink="/test" routerLinkActive="active" class="nav-link">Testing
+      </a>
+    </nav>
+  </header>
 
 
 </body>
