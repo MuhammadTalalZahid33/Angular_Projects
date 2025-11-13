@@ -32,3 +32,29 @@ button {
   font-size: 1.1rem;
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
+
+
+.box1 {
+  width: 200px;
+  height: 150px;
+  margin: 30px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  border-radius: 10px;
+  transition: all 0.3s ease-in-out;
+}
+
+.active-box {
+  background-color: #28a745;
+  transform: scale(1.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.inactive-box {
+  background-color: #dc3545;
+  transform: scale(1);
+  opacity: 0.8;
+}

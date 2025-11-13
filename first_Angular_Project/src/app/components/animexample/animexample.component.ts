@@ -22,4 +22,9 @@ export class AnimexampleComponent {
   toggleBox(){
     this.isVisible = !this.isVisible;
   }
+
+  isActive = false;
+  toggleActive(){
+    this.isActive = !this.isActive;
+  }
 }
