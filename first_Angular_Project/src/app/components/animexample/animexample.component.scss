@@ -1,0 +1,34 @@
+h2 {
+  text-align: center;
+}
+
+button {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 16px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s;
+
+  &:hover {
+    background: #0056b3;
+  }
+}
+
+.box {
+  width: 200px;
+  height: 200px;
+  margin: 40px auto;
+  background-color: #4caf50;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  font-size: 1.1rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}

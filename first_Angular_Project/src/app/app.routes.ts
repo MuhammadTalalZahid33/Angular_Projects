@@ -42,6 +42,13 @@ export const routes: Routes = [
             return import('./components/tester-component/tester-component.component')
             .then(m => m.TesterComponentComponent);
         }
+    },
+    {
+        path: 'anime',
+        loadComponent: () => {
+            return import('./components/animexample/animexample.component')
+            .then(m => m.AnimexampleComponent);
+        }
     }
 
 

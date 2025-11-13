@@ -1,0 +1,11 @@
+<h2>Angular Animations Example</h2>
+
+<button (click)="toggleBox()">
+  {{ isVisible ? 'Hide' : 'Show' }} Box
+</button>
+
+<div
+  class="box"
+  [@fadeAnimation]="isVisible ? 'visible' : 'hidden'">
+  I fade in and out 👻
+</div>
