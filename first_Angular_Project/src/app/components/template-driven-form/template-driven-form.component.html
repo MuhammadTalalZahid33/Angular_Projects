@@ -1,0 +1,69 @@
+<h2>User Registration Form (Template-Driven)</h2>
+
+<form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)" class="user-form">
+  
+  <!-- Name -->
+  <label for="name">Name</label>
+  <input
+    id="name"
+    name="name"
+    type="text"
+    [(ngModel)]="user.name"
+    required
+    minlength="3"
+    #name="ngModel"
+  />
+  <div class="error" *ngIf="name.invalid && name.touched">
+    <small *ngIf="name.errors?.['required']">Name is required.</small>
+    <small *ngIf="name.errors?.['minlength']">Minimum 3 characters required.</small>
+  </div>
+
+  <!-- Email -->
+  <label for="email">Email</label>
+  <input
+    id="email"
+    name="email"
+    type="email"
+    [(ngModel)]="user.email"
+    required
+    email
+    #email="ngModel"
+  />
+  <div class="error" *ngIf="email.invalid && email.touched">
+    <small *ngIf="email.errors?.['required']">Email is required.</small>
+    <small *ngIf="email.errors?.['email']">Please enter a valid email.</small>
+  </div>
+
+  <!-- Password -->
+  <label for="password">Password</label>
+  <input
+    id="password"
+    name="password"
+    type="password"
+    [(ngModel)]="user.password"
+    required
+    minlength="6"
+    #password="ngModel"
+  />
+  <div class="error" *ngIf="password.invalid && password.touched">
+    <small *ngIf="password.errors?.['required']">Password is required.</small>
+    <small *ngIf="password.errors?.['minlength']">Minimum 6 characters required.</small>
+  </div>
+
+  <!-- Gender -->
+  <label>Gender</label>
+  <select name="gender" [(ngModel)]="user.gender" required #gender="ngModel">
+    <option value="">Select Gender</option>
+    <option value="male">Male</option>
+    <option value="female">Female</option>
+  </select>
+  <div class="error" *ngIf="gender.invalid && gender.touched">
+    <small>Please select your gender.</small>
+  </div>
+
+  <!-- Submit -->
+  <button type="submit" [disabled]="userForm.invalid">Register</button>
+</form>
+
+<!-- Debug -->
+<pre>{{ user | json }}</pre>
